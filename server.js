@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const path = require('path');
 
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./auth');
 
 const app = express();
 
@@ -40,19 +40,19 @@ function isGuest(req, res, next) {
 app.use('/auth',authRoutes);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/login', isGuest, (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/login.html'));
+    res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 app.get('/signup', isGuest, (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/signup.html'));
+    res.sendFile(path.join(__dirname, 'signup.html'));
 });
 
 app.get('/dashboard', isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/dashboard.html'));
+    res.sendFile(path.join(__dirname, 'dashboard.html'));
 });
 
 app.get('/logout', (req, res) => {
