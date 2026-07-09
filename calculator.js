@@ -14,3 +14,5 @@ document.getElementById("payment").innerHTML=
 "Monthly Payment: $" + monthly.toFixed(2);
 
 }
+
+calculateLoan();
