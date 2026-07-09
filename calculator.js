@@ -15,4 +15,4 @@ document.getElementById("payment").innerHTML=
 
 }
 
-calculateLoan();
+
